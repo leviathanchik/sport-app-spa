@@ -1,0 +1,30 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+  <head>
+    <link rel='stylesheet' type="text/css" href='style.css' />
+    <title>Champions League Stats</title>
+    <script src="form.js"></script>
+  </head>
+  <body>
+    <div>
+      <ul class="navigation">
+        <li><a href="strzelcy.html">Najlepsi strzelcy</a></li>
+        <li><a href="ranking.html">Ranking drużyn</a></li>
+        <li><a href="kartki.html">Zawodnicy z największą ilością kartek</a></li>
+        <li><a href="main.html">Strona główna</a></li>
+      </ul>
+    </div>
+    <h1>Champions League Stats</h1>
+    <form>
+      Wpisz nazwę drużyny: <input type=text name=nazwa_dru onBlur="ValidateName(this)" onFocus="name_correct()">
+      <div id="info1"></div>
+      <!-- w input chyba trzeba wstawić onclick="info(this)"-- lub bez this jeszcze nie wiem-->
+      <input type=submit value=Szukaj >
+    </form>
+    
+    <br/><br/>
+  <!--"uzytkownik wprowadza nazwę druzyny naciska submit i wyswietla się poniżej info o ilosci roznych kartek za  ostatnią grę, ilości strzelonych i straconych bramek"   "  -->
+    <style></style>
+    <!--Jeszcze idei co możemy wyświetlić na głównej stronie żeby nie była tak pusta-->
+  </body>
+</html>
