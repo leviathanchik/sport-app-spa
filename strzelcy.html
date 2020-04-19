@@ -57,7 +57,7 @@
         topscorers: []
       },
       mounted: function() {
-        axios.get('./test.json')
+        axios.get('http://jsfwebdesign.com/api/sport/api.json')
             .then(response => {
               this.topscorers = response.data;
               console.log(response);
