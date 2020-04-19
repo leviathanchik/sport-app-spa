@@ -33,52 +33,6 @@
   <!--"uzytkownik wprowadza nazwę druzyny naciska submit i wyswietla się poniżej info o ilosci roznych kartek za  ostatnią grę, ilości strzelonych i straconych bramek"   "  -->
     <style></style>
     <!--Jeszcze idei co możemy wyświetlić na głównej stronie żeby nie była tak pusta-->
-    <div class="container mt-4" id="app">
-
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">Player ID</th>
-          <th scope="col">Name</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">Position</th>
-          <th scope="col">Nationality</th>
-          <th scope="col">Team ID</th>
-          <th scope="col">Team Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="topscorer in topscorers">
-          <td>{{ topscorer.player_id }}</td>
-          <td>{{ topscorer.player_name }}</td>
-          <td>{{ topscorer.firstname }}</td>
-          <td>{{ topscorer.lastname }}</td>
-          <td>{{ topscorer.position }}</td>
-          <td>{{ topscorer.nationality }}</td>
-          <td>{{ topscorer.team_id }}</td>
-          <td>{{ topscorer.team_name }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
- <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        topscorers: []
-      },
-      mounted: function() {
-        axios.get('./test.json')
-            .then(response => {
-              this.topscorers = response.data;
-              console.log(response);
-            })
-            .catch(error => {
-              console.log(error);
-            });
-      }
-    })
-  </script>
+    
   </body>
 </html>
