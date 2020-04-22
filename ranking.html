@@ -13,7 +13,41 @@
         <li><a href="main.html">Strona główna</a></li>
     </div>
     <h1>Najbardziej bramkostrzelne drużyny w fazie pucharowej sezonu 18/19</h1>
-    <!--Najbardziej bramkostrzelne drużyny w fazie pucharowej sezonu 18/19 lub 19/20 --> 
+<div class="container mt-4" id="app">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Nazwa drużyny</th>
+          <th scope="col">Kod</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="club in clubs">
+          <td>{{ club.name }}</td>
+          <td>{{ club.code }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        clubs: []
+      },
+      mounted: function() {
+        axios.get('https://raw.githubusercontent.com/openfootball/football.json/master/2019-20/es.1.clubs.json')
+            .then(response => {
+              this.clubs = response.data[0].clubs;
+              console.log(response);
+            })
+            .catch(error => {
+              console.log(error);
+            });
+      }
+    })
+  </script>
     <style></style>
     
   </body>
