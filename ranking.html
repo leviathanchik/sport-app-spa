@@ -25,9 +25,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="club in clubs">
-          <td>{{ club.name }}</td>
-          <td>{{ club.code }}</td>
+        <tr v-for="topclub in topclubs">
+          <td>{{ topclub.name }}</td>
+          <td>{{ topclub.code }}</td>
         </tr>
       </tbody>
     </table>
@@ -36,12 +36,12 @@
     var app = new Vue({
       el: '#app',
       data: {
-        clubs: []
+        topclubs: []
       },
       mounted: function() {
         axios.get('https://raw.githubusercontent.com/openfootball/football.json/master/2019-20/es.1.clubs.json')
             .then(response => {
-              this.clubs = response.data[0].clubs;
+              this.topclubs = response.data[0].clubs;
               console.log(response);
             })
             .catch(error => {
