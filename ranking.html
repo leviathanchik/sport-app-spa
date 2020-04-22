@@ -41,7 +41,7 @@
       mounted: function() {
         axios.get('https://raw.githubusercontent.com/openfootball/football.json/master/2019-20/es.1.clubs.json')
             .then(response => {
-              this.topclubs = response.data[0].clubs;
+              this.topclubs = response.data.clubs;
               console.log(response);
             })
             .catch(error => {
