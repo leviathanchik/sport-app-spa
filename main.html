@@ -32,9 +32,9 @@
 		
 		<transition-group tag="ul" name="list-animation">
 			
-			<li class="photo photo-animated" v-for="photo in filteredPhotoFeed" v-bind:key="photo.id">
-				<img v-bind:src="photo.download_url" />
-				<span class="author">{{ photo.author }}</span>
+			<li class="photo photo-animated" v-for="photo in filteredPhotoFeed" v-bind:key="photo.key">
+				<span class="author">{{ photo.code }}</span>
+				<span class="author">{{ photo.name }}</span>
 			</li>
 			
 		</transition-group>
