@@ -30,7 +30,7 @@ var instasearchApp = new Vue({
             searchString = authorNameSearchString.trim().toLowerCase();
 
             photos = photos.filter(function(item){
-                if(item.author.toLowerCase().indexOf(authorNameSearchString) !== -1){
+                if(item.name.toLowerCase().indexOf(authorNameSearchString) !== -1){
                     return item;
                 }
             })
