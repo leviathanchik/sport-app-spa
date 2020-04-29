@@ -4,6 +4,10 @@
     <link rel='stylesheet' type="text/css" href='style.css' />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="navbar.js"></script>
+         <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+
     <title>Champions League Stats</title>
     <script src="form.js"></script>
   </head>
@@ -18,17 +22,25 @@
       </ul>
     </nav>
     <h1>Champions League Stats</h1>
-    <form>
-      Wpisz nazwę drużyny: <input type=text name=nazwa_dru onBlur="ValidateName(this)" onFocus="name_correct()">
-      <div id="info1"></div>
-      <!-- w input chyba trzeba wstawić onclick="info(this)"-- lub bez this jeszcze nie wiem-->
-      <input type=submit value=Szukaj >
-    </form>
-    
-    <br/><br/>
-  <!--"uzytkownik wprowadza nazwę druzyny naciska submit i wyswietla się poniżej info o ilosci roznych kartek za  ostatnią grę, ilości strzelonych i straconych bramek"   "  -->
-    <style></style>
-    <!--Jeszcze idei co możemy wyświetlić na głównej stronie żeby nie była tak pusta-->
+
+	<div id="app-instasearch">
+	
+		<div class="input-container">
+			<input type="text" placeholder="Type a name" v-model="authorNameSearchString" />
+		</div>
+		
+		<transition-group tag="ul" name="list-animation">
+			
+			<li class="photo photo-animated" v-for="photo in filteredPhotoFeed" v-bind:key="photo.id">
+				<img v-bind:src="photo.download_url" />
+				<span class="author">{{ photo.author }}</span>
+			</li>
+			
+		</transition-group>
+	
+	</div>
+	
+	<script src="app.js"></script>
     
   </body>
 </html>
