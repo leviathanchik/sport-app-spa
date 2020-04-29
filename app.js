@@ -9,7 +9,7 @@ var instasearchApp = new Vue({
 	
 	mounted() {
 		axios
-			.get('https://github.com/openfootball/football.json/blob/master/2019-20/en.2.clubs.json')
+			.get('https://picsum.photos/v2/list?page=2&limit=10')
 			.then(response => {
 				this.photoFeed = response.data;
 			})
