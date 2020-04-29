@@ -9,7 +9,7 @@ var instasearchApp = new Vue({
 	
 	mounted() {
 		axios
-			.get('https://picsum.photos/v2/list?page=2&limit=10')
+			.get('https://jfilipek1.github.io/test/clubs.json')
 			.then(response => {
 				this.photoFeed = response.data;
 			})
