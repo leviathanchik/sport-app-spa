@@ -34,9 +34,9 @@
 			
 			<li class="photo photo-animated" v-for="photo in filteredPhotoFeed" v-bind:key="photo.team_id">
 				<img v-bind:src="photo.logo" />
-				<span class="name">{{ photo.name }}</span>
-				<span class="founded">Rok założenia: {{ photo.founded }}</span>
-				<span class="venue_name">Stadion: {{ photo.venue_name }}</span>
+				<span class="name">{{ photo.name }}</span><br>
+				<span class="founded">Rok założenia: {{ photo.founded }}</span><br>
+				<span class="venue_name">Stadion: {{ photo.venue_name }}</span><br>
 				<span class="venue_city">{{ photo.venue_city }}</span>
 			</li>
 			
