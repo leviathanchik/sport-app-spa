@@ -32,8 +32,8 @@
 		
 		<transition-group tag="ul" name="list-animation">
 			
-			<li class="photo photo-animated" v-for="photo in filteredPhotoFeed" v-bind:key="photo.id">
-				<img v-bind:src="photo.download_url" />
+			<li class="photo photo-animated" v-for="photo in filteredPhotoFeed" v-bind:key="photo.team_id">
+				<img v-bind:src="photo.logo" />
 				<span class="name">{{ photo.name }}</span>
 			</li>
 			
